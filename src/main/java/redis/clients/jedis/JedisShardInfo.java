@@ -13,6 +13,7 @@ public class JedisShardInfo extends ShardInfo<Jedis> {
     private int timeout;
     private String host;
     private int port;
+    private int index = 0;
     private String password = null;
     private String name = null;
 
@@ -96,4 +97,12 @@ public class JedisShardInfo extends ShardInfo<Jedis> {
     public Jedis createResource() {
 	return new Jedis(this);
     }
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
 }
